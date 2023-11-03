@@ -1,0 +1,134 @@
+ubuntu@ip-172-31-19-106:~/test/backend/src/api$ cd contact-form/
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form$ ls
+content-types  controllers  documentation  routes  services
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form$ ls
+content-types  controllers  documentation  routes  services
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form$ cd content-types/
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types$ nano contact-form/
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types$ ls
+contact-form
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types$ cd contact-form/
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types/contact-form$ ls
+schema.json
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types/contact-form$ ls
+schema.json
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types/contact-form$ cd ..
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types$ cd ..
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form$ ls
+content-types  controllers  documentation  routes  services
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form$ cd ..
+ubuntu@ip-172-31-19-106:~/test/backend/src/api$ ls
+about-us          article-visiogait  freegait     product
+article-freegait  contact            home         robogait
+article-robogait  contact-form       our-product  visiogait
+ubuntu@ip-172-31-19-106:~/test/backend/src/api$ cd contact
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact$ ls
+content-types  controllers  documentation  routes  services
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact$ cd content-types/
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact/content-types$ ls
+contact
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact/content-types$ cd contact/
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact/content-types/contact$ ls
+lifecycles.ts  schema.json
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact/content-types/contact$ nano lifecycles.ts 
+
+  GNU nano 4.8                     lifecycles.ts                                
+export default {
+    async afterCreate(event) {    // Connected to "Save" button in admin panel
+        const { result } = event;
+
+        try{
+            await strapi.plugins['email'].services.email.send({
+              to: 'enesyarkan78@gmail.com',
+              // e.g. single sender verification in SendGrid
+              subject: 'The Strapi Email plugin worked successfully',
+              text: 'AYAYAYA', // Replace with a valid field ID
+              html: 'Hello world!',
+
+            })
+        } catch(err) {
+            console.log(err);
+        }
+    }
+}
+
+
+                               [ Read 18 lines ]
+^G Get Help  ^O Write Out ^W Where Is  ^K Cut Text  ^J Justify   ^C Cur Pos
+^X Exit      ^R Read File ^\ Replace   ^U Paste Text^T To Spell  ^_ Go To Line
+ubuntu@ip-172-31-19-106:~/test/backend/src/api$ cd contact-form/
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form$ ls
+content-types  controllers  documentation  routes  services
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form$ ls
+content-types  controllers  documentation  routes  services
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form$ cd content-types/
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types$ nano contact-form/
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types$ ls
+contact-form
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types$ cd contact-form/
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types/contact-form$ ls
+schema.json
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types/contact-form$ ls
+schema.json
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types/contact-form$ cd ..
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form/content-types$ cd ..
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form$ ls
+content-types  controllers  documentation  routes  services
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact-form$ cd ..
+ubuntu@ip-172-31-19-106:~/test/backend/src/api$ ls
+about-us          article-visiogait  freegait     product
+article-freegait  contact            home         robogait
+article-robogait  contact-form       our-product  visiogait
+ubuntu@ip-172-31-19-106:~/test/backend/src/api$ cd contact
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact$ ls
+content-types  controllers  documentation  routes  services
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact$ cd content-types/
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact/content-types$ ls
+contact
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact/content-types$ cd contact/
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact/content-types/contact$ ls
+lifecycles.ts  schema.json
+ubuntu@ip-172-31-19-106:~/test/backend/src/api/contact/content-types/contact$ nano lifecycles.ts 
+
+  GNU nano 4.8                     lifecycles.ts                                
+export default {
+    async afterCreate(event) {    // Connected to "Save" button in admin panel
+        const { result } = event;
+
+        try{
+            await strapi.plugins['email'].services.email.send({
+              to: 'enesyarkan78@gmail.com',
+              // e.g. single sender verification in SendGrid
+              subject: 'The Strapi Email plugin worked successfully',
+              text: 'AYAYAYA', // Replace with a valid field ID
+              html: 'Hello world!',
+
+            })
+        } catch(err) {
+            console.log(err);
+        }
+    }
+}
+
+
+                               [ Read 18 lines ]
+^G Get Help  ^O Write Out ^W Where Is  ^K Cut Text  ^J Justify   ^C Cur Pos
+^X Exit      ^R Read File ^\ Replace   ^U Paste Text^T To Spell  ^_ Go To Line
+export default {
+    async afterCreate(event) {    // Connected to "Save" button in admin panel
+        const { result } = event;
+
+        try{
+            await strapi.plugins['email'].services.email.send({
+              to: 'enesyarkan78@gmail.com',
+              // e.g. single sender verification in SendGrid
+              subject: 'The Strapi Email plugin worked successfully',
+              text: 'AYAYAYA', // Replace with a valid field ID
+              html: 'Hello world!', 
+                
+            })
+        } catch(err) {
+            console.log(err);
+        }
+    }
+}
